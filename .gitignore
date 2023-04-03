@@ -1,0 +1,18 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/APIwithTest.API/APIwithTest.API/obj
+/APIwithTest.API/APIwithTest.Services/bin/Debug/net6.0
+/APIwithTest.API/APIwithTest.API/bin/Debug/net6.0
+/APIwithTest.API/.vs/APIwithTest.API/DesignTimeBuild
+/APIwithTest.API/.vs/APIwithTest.API/FileContentIndex
+/APIwithTest.API/.vs/APIwithTest.API/v17
+/APIwithTest.API/.vs/ProjectEvaluation
+/APIwithTest.API/APIwithTest.Services/obj
+/APIwithTest.API/APIwithTest.Test/bin/Debug/net6.0
+/APIwithTest.API/APIwithTest.Test/obj
+/APIwithTest.API/.vs/APIwithTest.API/config
+/.vs/APIwithTest/v17
+/.vs/APIwithTest/FileContentIndex
+/.vs
