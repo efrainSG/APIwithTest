@@ -25,10 +25,13 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: ./APIwithTest.API
     - name: Build
       run: dotnet build --no-restore
+      working-directory: ./APIwithTest.API
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: ./APIwithTest.API
 ```
 
 ## Start working
