@@ -28,3 +28,4 @@ jobs:
       working-directory: ./APIwithTest.API
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: ./APIwithTest.API
