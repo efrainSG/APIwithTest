@@ -20,10 +20,11 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
+    - name: Restore dependencies 001
       run: dotnet restore
-      working-directory: ../APIwithTest.API
-    - name: Build
+      working-directory: ./APIwithTest.API
+    - name: Build 001
       run: dotnet build --no-restore
+      working-directory: ./APIwithTest.API
     - name: Test
       run: dotnet test --no-build --verbosity normal
