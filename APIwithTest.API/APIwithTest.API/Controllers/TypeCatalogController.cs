@@ -15,19 +15,19 @@ namespace APIwithTest.API.Controllers
             this.typeCatalogService = typeCatalogService;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet()]
         public IActionResult GetAll()
         {
             return Ok(typeCatalogService.GetAll());
         }
 
-        [HttpGet("GetById")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             return Ok(typeCatalogService.GetById(new TypeCatalog { Id = id }));
         }
 
-        [HttpGet("GetByName")]
+        [HttpGet("ByName/{name}")]
         public IActionResult GetByName(string name)
         {
             return Ok(typeCatalogService.GetByName(new TypeCatalog { Name = name }));

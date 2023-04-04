@@ -4,14 +4,14 @@ using APIwithTest.Services.Services;
 
 namespace APIwithTest.Test
 {
-    public class TypeCatalogTest
+    public class CatalogTest
     {
-        private ITypeCatalogService service;
+        private ICatalogService service;
 
         [SetUp]
         public void Setup()
         {
-            service = new TypeCatalogService();
+            service = new CatalogService();
         }
 
         [Test]
@@ -20,46 +20,46 @@ namespace APIwithTest.Test
             var result = service.GetAll();
             Assert.True(result != null);
             Assert.True(result?.Count() != 0);
-            Assert.True(result?.Count() == 3);
+            Assert.True(result?.Count() == 6);
         }
 
         [Test]
         public void GetByIdTest()
         {
-            var result = service.GetById(new TypeCatalog { Id = 1});
+            var result = service.GetById(new Catalog { Id = 5});
             Assert.True(result != null);
-            Assert.True(result?.Name == "Tipo de sangre");
+            Assert.True(result?.Name == "Celular");
         }
 
         [Test]
         public void GetByNameTest()
         {
-            var result = service.GetByName(new TypeCatalog { Name = "Tipo" });
+            var result = service.GetByName(new Catalog { Name = "A" });
             Assert.True(result != null);
             Assert.True(result?.Count() != 0);
-            Assert.True(result?.Count() == 2);
+            Assert.True(result?.Count() == 3);
         }
 
         [Test]
         public void SaveTest()
         {
-            var result = service.SaveNew(new TypeCatalog { Id = 4, Name = "Tipo de usuario", Description = "Tipos de usuario que se pueden registrar" });
+            var result = service.SaveNew(new Catalog { Id = 7, Name = "Padre", TypeCatalogId = 3 });
             Assert.True(result != null);
             Assert.True(result?.Count() != 0);
-            Assert.True(result?.Count() == 4);
+            Assert.True(result?.Count() == 7);
         }
 
         [Test]
         public void UpdateTest()
         {
-            TypeCatalog toUpdate = new TypeCatalog { Id = 1, Name = "Tipo de teléfono", Description = "Tipos de teléfono que se pueden registrar" };
-            TypeCatalog original = service.GetById(toUpdate);
+            Catalog toUpdate = new Catalog { Id = 6, Name = "Casa", TypeCatalogId = 3 };
+            Catalog original = service.GetById(toUpdate);
 
             var result = service.Update(toUpdate);
 
             Assert.True(result != null);
             Assert.True(result?.Count() != 0);
-            Assert.True(result?.Count() == 3);
+            Assert.True(result?.Count() == 6);
             Assert.True(result?.First(r => r.Id == toUpdate.Id).Name.ToUpper() == toUpdate.Name.ToUpper());
         }
     }
