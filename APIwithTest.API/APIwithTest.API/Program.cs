@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add scoped services to the container. This kind services lives during each instance.
 builder.Services.AddScoped<ITypeCatalogService, TypeCatalogService>();
+builder.Services.AddScoped<ICatalogService, CatalogService>();
 
 // Add transient services to the container. This kind of services lives during each request.
 
